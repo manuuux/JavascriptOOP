@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.min.css">
+    <title>Tareas Pendientes</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <a href="/" class="navbar-brand">Tareas</a>
+    </nav>
+    <div id="app" class="row pt-3">
+        <div class="col-md-12 mb-3">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Agregar tarea</h4>
+                </div>
+                <form id="form-tareas" class="card-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nueva tarea" id="txtTarea" required>
+
+                        <button class="btn btn-success" type="button" id="chkUrgencia" value=false>No Urgente</button>
+
+                        <button class="btn btn-primary" type="submit" id="btnAgregar">Agregar</button>
+                      </div>
+                    
+                </form>
+            </div>
+        </div>
+        
+        <div id="notificaciones">
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Pendientes</h4>
+                    
+                </div>
+                <div class="card-body" id="lstTareasPendientes">
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Realizadas</h4>
+                </div>
+                <div class="card-body" id="lstTareasCompletadas">
+
+                    
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <template id="tmpNotificacion">
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" name="eliminar"></button>
+            <strong>mensaje</strong>
+        </div>
+    </template>
+    
+    <!-- Template Tareas-->
+    <template id="itemTareas">
+        <div class="alert alert-dismissible alert-secondary mb-2 pb-0">
+            <button type="button" class="btn-close" name="eliminar"></button>
+            <button type="button" class="btn btn-success btn-sm" name="completar">Completar</button>
+            <div class="card-body">
+                <p class="card-text">descripcion</p>
+                <span class="badge bg-danger">Urgente</span>
+            </div>
+        </div>
+    </template>
+    <script src="app.js"></script>
+</body>
+</html>
